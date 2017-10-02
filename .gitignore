@@ -1,0 +1,10 @@
+# ignore compiled binaries
+*.exe
+*.o
+
+# ignore dependencies
+*.d
+
+# system created files
+Thumbs.db
+.DS_Store
