@@ -26,15 +26,15 @@ Shader* Shader::current = nullptr;
 int main() {	
 	srand(time(NULL));
 	
-	std::ifstream vtxfile("v1.vs");
+	std::ifstream vtxfile("src/v1.vs");
 	std::string vtxsrc{std::istreambuf_iterator<char>(vtxfile), std::istreambuf_iterator<char>()};
 	vtxfile.close();
 	
-	std::ifstream fragfile("f1.fs");
+	std::ifstream fragfile("src/f1.fs");
 	std::string frag1src{std::istreambuf_iterator<char>(fragfile), std::istreambuf_iterator<char>()};
 	fragfile.close();
 
-	std::ifstream frag2file("f2.fs");
+	std::ifstream frag2file("src/f2.fs");
 	std::string frag2src{std::istreambuf_iterator<char>(frag2file), std::istreambuf_iterator<char>()};
 	frag2file.close();
 	
@@ -111,8 +111,8 @@ int main() {
     glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)(3 * sizeof(float)));
     glEnableVertexAttribArray(1);
 	
-	Texture* tex1 = new Texture(0, "container.jpg");
-	Texture* tex2 = new Texture(1, "awesomeface.png");
+	Texture* tex1 = new Texture(0, "res/container.jpg");
+	Texture* tex2 = new Texture(1, "res/awesomeface.png");
 	
 	sprgm->use();
 	sprgm->setUniform("tex1", 0);
